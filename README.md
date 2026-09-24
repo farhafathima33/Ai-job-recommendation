@@ -53,14 +53,19 @@ Interactive Swagger documentation:
 http://127.0.0.1:8000/docs
 Keep this terminal running.
 
+
 6. Start the Streamlit Frontend
 
 Open a second terminal and activate the virtual environment:
+
 [cd Ai-job-recommendation]
+
 [source venv/bin/activate]
 
 Then run:
+
 streamlit run streamlit_app.py
+
 Open the local URL provided by Streamlit, usually:
 [http://localhost:8501]
 
@@ -75,6 +80,7 @@ Enter the candidate's:
 - Preferred job role
 - Location
 - Profile summary
+
 Click Recommend Jobs to receive ranked job recommendations with match scores, matched/missing skills, score breakdown, and explanations. 
 
 ## System Architecture
@@ -186,6 +192,7 @@ General required skills contribute to the overall skill score. Mandatory skills 
 For each job, the system can define a list of mandatory skills:
 
 json
+
 {
     "mandatory_skills": [
         "Python",
@@ -211,6 +218,7 @@ For example:
 > Matched skills include machine learning, Python, and SQL. Missing skills include TensorFlow. The candidate has 2 years of experience and meets the 1-year requirement. The candidate's education satisfies the job requirement. Location compatibility is partial because the job is hybrid.
 
 The explanation is generated using deterministic rules.
+
 This makes the output:
 - Easy to understand
 - Easy to test
@@ -220,35 +228,53 @@ This makes the output:
 The following assumptions and design decisions were made while developing the prototype.
 
  1. Skills are explicitly provided
+
 Assume the candidate's skills and the job's required skills are already available as lists.
+
 Example:
+
 Candidate: Python, SQL, Pandas
+
 Job requires: Python, SQL, TensorFlow
+
 [We compare these lists after converting them to lowercase and removing extra spaces.]
 
  2. Experience is measured in years
 
 Assume experience is given numerically.
+
 Example:
+
 Candidate = 2 years
+
 Job requires = 1 year
+
 → Experience score = 100%
+
 [If the candidate has less experience, the score is reduced proportionally.]
 
  3. Education matching is rule-based
 
 Compared education using predefined rules.
+
 For example:
+
 Candidate: BS Data Science
+
 Job: Bachelor's degree
+
 → Match
 
  4. Location depends on work mode
 
 Consider both location and whether the job is remote/hybrid/on-site.
+
 For example:
+
 Remote job → Location doesn't matter much
+
 Same location → Good compatibility
+
 Different location + on-site → Low compatibility
 
  5. TF-IDF is used for text relevance
@@ -263,15 +289,20 @@ Will combine all matching factors into one final score:
 - Role         → 15%
 - Education    → 10%
 - Location     → 10%
+
 [Skills are considered the most important factor for this prototype, while the other factors contribute to the overall compatibility.
 Importantly, these are our prototype design choices, not universally correct weights.]
 
  7. Mandatory skills are tracked separately
 
 Some skills may be essential for a particular job.
+
 For example:
+
 Required: Python, SQL, TensorFlow
+
 Mandatory: Python
+
 [The system separately checks whether mandatory skills are missing.]
 
  8. Mock job data is used
@@ -297,11 +328,13 @@ For each evaluation case, the expected relevant jobs were defined in `data/evalu
 > Precision
 
 Precision@3 measures how many of the top 3 recommended jobs are relevant.
+
 Precision@3 = Relevant jobs in top 3 recommendations / 3
 
 > Recall
 
 Recall@3 measures how many of the relevant jobs were successfully retrieved within the top 3 recommendations.
+
 Recall@3 = Relevant jobs in top 3 recommendations / Total relevant jobs
 
  API Documentation
@@ -309,17 +342,22 @@ Recall@3 = Relevant jobs in top 3 recommendations / Total relevant jobs
 The project provides a FastAPI backend for generating job recommendations.
 
 - Start the API
+
 Run the following command from the project root:
+
 [uvicorn main:app --reload]
 
 - Endpoint
+
 POST /recommend
+
 The endpoint accepts a candidate profile and a list of jobs and returns the ranked job recommendations.
 
  Testing
 
 The project uses `pytest` for automated testing.
-Test cases are stored in:
+
+Test cases are stored in: 
 [tests/test_recommendation.py]
 
 ### Example request
@@ -407,7 +445,11 @@ Test cases are stored in:
 The API uses Pydantic models to validate incoming candidate and job data.
 
 For example, the candidate must contain:
+
 -Candidate name
+
 -Skills
+
 -Profile summary
+
 Other fields such as experience, education, location and preferred role can be optional at the API model level.
