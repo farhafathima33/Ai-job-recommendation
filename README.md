@@ -185,13 +185,15 @@ General required skills contribute to the overall skill score. Mandatory skills 
 
 For each job, the system can define a list of mandatory skills:
 
-```json
-"mandatory_skills": [
-    "Python",
-    "Machine Learning"
-]
-
- Explainability
+json
+{
+    "mandatory_skills": [
+        "Python",
+        "Machine Learning"
+    ]
+}
+ 
+## Explainability
 
 The system provides an explanation for each recommendation instead of returning only a numerical match score.
 
@@ -213,7 +215,7 @@ This makes the output:
 - Easy to understand
 - Easy to test
 
- Key Assumptions and Design Decisions 
+## Key Assumptions and Design Decisions 
 
 The following assumptions and design decisions were made while developing the prototype.
 
@@ -276,7 +278,7 @@ Mandatory: Python
 
 I used jobs.json instead of a real job database.
 
- Limitations and Possible Improvements
+## Limitations and Possible Improvements
 
     Limitation                             |       Possible Improvment
                                            |
