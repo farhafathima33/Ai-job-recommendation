@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Junior Machine Learning Engineer",
+    "company": "TechNova",
+    "description": "Looking for a machine learning engineer with Python and SQL experience.",
+    "required_skills": [
+      "Python",
+      "Machine Learning",
+      "SQL",
+      "TensorFlow"
+    ],
+    "mandatory_skills": [
+      "Python",
+      "Machine Learning"
+    ],
+    "min_experience": 1,
+    "education": "Bachelor's degree",
+    "location": "Bangalore",
+    "remote_type": "Hybrid"
+  },
+  {
+    "title": "Data Analyst",
+    "company": "DataCorp",
+    "description": "Looking for a data analyst with SQL, Python and data analysis skills.",
+    "required_skills": [
+      "SQL",
+      "Python",
+      "Excel",
+      "Power BI"
+    ],
+    "mandatory_skills": [
+      "SQL"
+    ],
+    "min_experience": 1,
+    "education": "Bachelor's degree",
+    "location": "Kozhikode",
+    "remote_type": "On-site"
+  },
+  {
+    "title": "Graphic Designer",
+    "company": "CreativeStudio",
+    "description": "Looking for a graphic designer with Photoshop and Illustrator experience.",
+    "required_skills": [
+      "Photoshop",
+      "Illustrator",
+      "Figma"
+    ],
+    "mandatory_skills": [
+      "Photoshop",
+      "Illustrator"
+    ],
+    "min_experience": 2,
+    "education": "Bachelor's degree",
+    "location": "Mumbai",
+    "remote_type": "On-site"
+  },
+  {
+    "title": "Python Developer",
+    "company": "CodeWorks",
+    "description": "Python developer needed for backend development and API development.",
+    "required_skills": [
+      "Python",
+      "SQL",
+      "FastAPI"
+    ],
+    "mandatory_skills": [
+      "Python"
+    ],
+    "min_experience": 1,
+    "education": "Bachelor's degree",
+    "location": "Bangalore",
+    "remote_type": "Remote"
+  }
+]

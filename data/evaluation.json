@@ -1,0 +1,41 @@
+[
+  {
+    "candidate": {
+      "name": "Alex",
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "SQL",
+        "Pandas"
+      ],
+      "experience": 2,
+      "education": "BS Data Science",
+      "location": "Kozhikode",
+      "preferred_role": "Machine Learning Engineer",
+      "summary": "Data science graduate with experience in machine learning using Python and SQL."
+    },
+    "relevant_jobs": [
+      "Junior Machine Learning Engineer",
+      "Python Developer"
+    ]
+  },
+  {
+    "candidate": {
+      "name": "Sam",
+      "skills": [
+        "SQL",
+        "Python",
+        "Excel",
+        "Power BI"
+      ],
+      "experience": 2,
+      "education": "BS Data Science",
+      "location": "Kozhikode",
+      "preferred_role": "Data Analyst",
+      "summary": "Data analyst with experience in SQL, Python, Excel and business data analysis."
+    },
+    "relevant_jobs": [
+      "Data Analyst"
+    ]
+  }
+]
