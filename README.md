@@ -280,22 +280,12 @@ I used jobs.json instead of a real job database.
 
 ## Limitations and Possible Improvements
 
-    Limitation                             |       Possible Improvment
-                                           |
-TF-IDF has limited semantic understanding  | Use embeddings/Sentence Transformers for semantic similarity.
-                                           |
-User has to enter skills, experience,      | Allow PDF/resume upload and automatically extract candidate 
-education, etc. manually.                  | information.
-                                           |
-Jobs are currently stored in jobs.json,    | Use PostgreSQL/MySQL for larger applications.
-which is fine for a small prototype.       |
-                                           |
-We currently use sample jobs from          | Connect to an authorised job database/API and update job
-jobs.json.                                 | listings automatically.
-                                           |
+ 
+1. TF-IDF has limited semantic understanding  --- Use embeddings/Sentence Transformers for semantic similarity.
+2. User has to enter skills, experience, education, etc. manually --- Allow PDF/resume upload and automatically extract candidate information.
+3. Jobs are currently stored in jobs.json,which is fine for a small prototype --- Use PostgreSQL/MySQL for larger applications.
+4. We currently use sample jobs from jobs.json --- Connect to an authorised job database/API and update job listings automatically.
                                            
-                                           
-
 ## Evaluation
 
 The recommendation system was evaluated using manually labelled candidate-job examples.
@@ -397,24 +387,22 @@ Test cases are stored in:
   ]
 }
 
- Response Fields
+### Response Fields
 
-     Field	             |         Description
-
-job_title	               |   Recommended job title
-company	                 |   Company offering the job
-match_score              |	 Overall weighted match score
-matched_skills           |	 Skills shared by the candidate and job
-missing_skills           |   Required skills missing from the candidate profile
-missing_mandatory_skills |	 Mandatory skills missing from the candidate profile
-mandatory_skill_gap	     |   Indicates whether a mandatory skill is missing
-experience_score	       |   Experience compatibility score
-education_score	         |   Education compatibility score
-location_score	         |   Location/work-mode compatibility score
-role_score	             |   TF-IDF-based role/text relevance score
+1. job_title - Recommended job title
+2. company - Company offering the job
+3. match_score - Overall weighted match score
+4. matched_skills - Skills shared by the candidate and job
+5. missing_skills - Required skills missing from the candidate profile
+6. missing_mandatory_skills - Mandatory skills missing from the candidate profile
+7. mandatory_skill_gap - Indicates whether a mandatory skill is missing
+8. experience_score	       |   Experience compatibility score
+9. education_score - Education compatibility score
+10. location_score - Location/work-mode compatibility score
+11. role_score - TF-IDF-based role/text relevance score
 
  
- API Validation
+### API Validation
 
 The API uses Pydantic models to validate incoming candidate and job data.
 
