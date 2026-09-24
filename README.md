@@ -1,4 +1,4 @@
->AI-Powered Job Recommendation System
+### AI-Powered Job Recommendation System
 
 An explainable AI-powered job recommendation system that analyses a candidate's profile against available job descriptions and recommends the most relevant job opportunities.
 
@@ -68,13 +68,13 @@ Open the local URL provided by Streamlit, usually:
 7. Use the Application
 
 Enter the candidate's:
-Name
-Skills
-Years of experience
-Education
-Preferred job role
-Location
-Profile summary
+- Name
+- Skills
+- Years of experience
+- Education
+- Preferred job role
+- Location
+- Profile summary
 Click Recommend Jobs to receive ranked job recommendations with match scores, matched/missing skills, score breakdown, and explanations. 
 
 ## System Architecture
@@ -111,19 +111,19 @@ Structured candidate information such as skills, experience, education, and loca
 
 The final match score is calculated using weighted scoring:
 
-| Matching Factor | Weight |
+- | Matching Factor | Weight |
 
-| Skills          | 45%    |
-| Experience      | 20%    |
-| Role/Text Relevance| 15% |
-| Education       | 10%    |
-| Location        | 10%    |
-| **Total**       |**100%**|
+- | Skills          | 45%    |
+- | Experience      | 20%    |
+- | Role/Text Relevance| 15% |
+- | Education       | 10%    |
+- | Location        | 10%    |
+- | **Total**       |**100%**|
 
 The final score is calculated as:
 
-Final Score =
-(Skill Score × 0.45) +
+- Final Score =
+ (Skill Score × 0.45) +
 (Experience Score × 0.20) +
 (Role Score × 0.15) +
 (Education Score × 0.10) +
@@ -258,11 +258,11 @@ Used TF-IDF + cosine similarity to compare the candidate's profile/role with the
  6. Weighted scoring is used
 
 Will combine all matching factors into one final score:
-Skills       → 45%
-Experience   → 20%
-Role         → 15%
-Education    → 10%
-Location     → 10%
+- Skills       → 45%
+- Experience   → 20%
+- Role         → 15%
+- Education    → 10%
+- Location     → 10%
 [Skills are considered the most important factor for this prototype, while the other factors contribute to the overall compatibility.
 Importantly, these are our prototype design choices, not universally correct weights.]
 
