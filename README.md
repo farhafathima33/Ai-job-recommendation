@@ -27,7 +27,55 @@ The system combines rule-based matching for structured candidate information wit
 
 ## Setup and Run Instructions
 
+1. Clone the Repository
+[git clone https://github.com/farhafathima33/Ai-job-recommendation.git
+cd Ai-job-recommendation]
 
+2. Create a Virtual Environment
+[python3 -m venv venv]
+
+Activate the virtual environment on Ubuntu/Linux
+[source venv/bin/activate]
+
+3. Install Dependencies
+[pip install -r requirements.txt]
+
+4. Run the Tests
+[pytest]
+
+5. Start the FastAPI Backend
+[uvicorn main:app --reload]
+
+The API will be available at:
+http://127.0.0.1:8000
+
+Interactive Swagger documentation:
+http://127.0.0.1:8000/docs
+Keep this terminal running.
+
+6. Start the Streamlit Frontend
+
+Open a second terminal and activate the virtual environment:
+[cd Ai-job-recommendation]
+[source venv/bin/activate]
+
+Then run:
+streamlit run streamlit_app.py
+Open the local URL provided by Streamlit, usually:
+[http://localhost:8501]
+
+
+7. Use the Application
+
+Enter the candidate's:
+Name
+Skills
+Years of experience
+Education
+Preferred job role
+Location
+Profile summary
+Click Recommend Jobs to receive ranked job recommendations with match scores, matched/missing skills, score breakdown, and explanations. 
 
 ## System Architecture
 
@@ -143,7 +191,7 @@ For each job, the system can define a list of mandatory skills:
     "Machine Learning"
 ]
 
-### Explainability
+ Explainability
 
 The system provides an explanation for each recommendation instead of returning only a numerical match score.
 
@@ -165,7 +213,7 @@ This makes the output:
 - Easy to understand
 - Easy to test
 
-## Key Assumptions and Design Decisions 
+ Key Assumptions and Design Decisions 
 
 The following assumptions and design decisions were made while developing the prototype.
 
@@ -228,7 +276,7 @@ Mandatory: Python
 
 I used jobs.json instead of a real job database.
 
-## Limitations and Possible Improvements
+ Limitations and Possible Improvements
 
     Limitation                             |       Possible Improvment
                                            |
@@ -264,7 +312,7 @@ Precision@3 = Relevant jobs in top 3 recommendations / 3
 Recall@3 measures how many of the relevant jobs were successfully retrieved within the top 3 recommendations.
 Recall@3 = Relevant jobs in top 3 recommendations / Total relevant jobs
 
-## API Documentation
+ API Documentation
 
 The project provides a FastAPI backend for generating job recommendations.
 
@@ -276,7 +324,7 @@ Run the following command from the project root:
 POST /recommend
 The endpoint accepts a candidate profile and a list of jobs and returns the ranked job recommendations.
 
-## Testing
+ Testing
 
 The project uses `pytest` for automated testing.
 Test cases are stored in:
@@ -347,7 +395,7 @@ Test cases are stored in:
   ]
 }
 
-###Response Fields
+ Response Fields
 
      Field	             |         Description
 
@@ -363,8 +411,8 @@ education_score	         |   Education compatibility score
 location_score	         |   Location/work-mode compatibility score
 role_score	             |   TF-IDF-based role/text relevance score
 
-
-##API Validation
+ 
+ API Validation
 
 The API uses Pydantic models to validate incoming candidate and job data.
 
